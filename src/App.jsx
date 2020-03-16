@@ -18,7 +18,7 @@ class App extends Component {
         this.handleClear = this.handleClear.bind(this);
         this.handleCopy = this.handleCopy.bind(this);
         this.handleCharacterClick = this.handleCharacterClick.bind(this);
-        this.handleCharacterSwitch = this.handleCharacterSwitch.bind(this);
+        this.switchCharacter = this.switchCharacter.bind(this);
     }
 
     handleTextChange(e) {
@@ -59,11 +59,11 @@ class App extends Component {
         // Now check if the character is a "VIP" and we can do what we need to with it.
         // if (parseInt(index, 10) === 5) {
         //     console.log("It's 5");
-        //     this.handleCharacterSwitch(5, "!");
+        //     this.switchCharacter(5, "!");
         // }
     }
 
-    handleCharacterSwitch(index, newChar) {
+    switchCharacter(index, newChar) {
         let newCharacterArray = this.state.characterArray;
         newCharacterArray[index] = newChar;
         let newRawText = newCharacterArray.join("");
