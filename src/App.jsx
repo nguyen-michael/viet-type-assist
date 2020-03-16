@@ -8,6 +8,7 @@ class App extends Component {
 
         this.state = {
             rawText: "",
+            characterArray: [],
             copySuccess: false
         }
 
@@ -17,11 +18,13 @@ class App extends Component {
         this.handleClear = this.handleClear.bind(this);
         this.handleCopy = this.handleCopy.bind(this);
         this.handleCharacterClick = this.handleCharacterClick.bind(this);
+        this.handleCharacterSwitch = this.handleCharacterSwitch.bind(this);
     }
 
     handleTextChange(e) {
         this.setState({
             rawText: e.target.value,
+            characterArray: [...e.target.value],
             copySuccess: false
         });
     }
@@ -47,7 +50,27 @@ class App extends Component {
     }
 
     handleCharacterClick(e) {
-        console.log(e.target.innerText);
+        const index = e.target.getAttribute("index");
+        const character = e.target.innerText;
+
+        console.log(character, index);
+
+        // This is functional. 
+        // Now check if the character is a "VIP" and we can do what we need to with it.
+        // if (parseInt(index, 10) === 5) {
+        //     console.log("It's 5");
+        //     this.handleCharacterSwitch(5, "!");
+        // }
+    }
+
+    handleCharacterSwitch(index, newChar) {
+        let newCharacterArray = this.state.characterArray;
+        newCharacterArray[index] = newChar;
+        let newRawText = newCharacterArray.join("");
+        this.setState({
+            rawText: newRawText,
+            characterArray: newCharacterArray
+        });
     }
 
     render() {
@@ -62,7 +85,7 @@ class App extends Component {
                     copySuccess={this.state.copySuccess}
                 />
                 <Display
-                    text={this.state.rawText}
+                    textArray={this.state.characterArray}
                     handleCharacterClick={this.handleCharacterClick}
                 />
             </div>
