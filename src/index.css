@@ -22,8 +22,8 @@ p {
 /*  Tool Tip */
 .tooltip {
   position: relative;
-  display: inline-block;
-  border-bottom: 1px dotted black;
+  /* display: inline-block; */
+  /* border-bottom: 1px dotted black; */
 }
 
 .tooltip .tooltiptext {
@@ -44,4 +44,9 @@ p {
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.tooltip:hover {
+  color: #6e672f;
+  transition: 0.4s;
 }

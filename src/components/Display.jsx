@@ -17,7 +17,7 @@ class Display extends Component {
                     key={index}
                     index={index}
                     value={char}
-                    handleCharacterClick={this.props.handleCharacterClick}
+                    handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
                     hasSiblingsOrTones={hasSiblingsOrTones}
                     siblingsTonesData={siblingsTonesData}
                 />

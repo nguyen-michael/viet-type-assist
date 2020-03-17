@@ -18,7 +18,7 @@ class App extends Component {
         this.handleTextChange = this.handleTextChange.bind(this);
         this.handleClear = this.handleClear.bind(this);
         this.handleCopy = this.handleCopy.bind(this);
-        this.handleCharacterClick = this.handleCharacterClick.bind(this);
+        this.handleCharacterSwitchClick = this.handleCharacterSwitchClick.bind(this);
         this.switchCharacter = this.switchCharacter.bind(this);
     }
 
@@ -50,7 +50,7 @@ class App extends Component {
         });
     }
 
-    handleCharacterClick(e) {
+    handleCharacterSwitchClick(e) {
         const index = e.target.getAttribute("index");
         const character = e.target.innerText;
         let data = e.target.getAttribute("data-siblingtone");
@@ -93,7 +93,7 @@ class App extends Component {
                 />
                 <Display
                     textArray={this.state.characterArray}
-                    handleCharacterClick={this.handleCharacterClick}
+                    handleCharacterSwitchClick={this.handleCharacterSwitchClick}
                     vietCharacterData={vietCharacterData}
                 />
             </div>
