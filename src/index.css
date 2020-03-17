@@ -13,7 +13,7 @@ code {
 }
 
 /* Dev Stuff, Clean up or finalize when deploying */
-p {
+span {
   font-size: 2.5rem;
   font-weight: bold;
   letter-spacing: 1px;
@@ -28,7 +28,7 @@ p {
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 7rem;
   background-color: black;
   color: #fff;
   text-align: center;
@@ -42,6 +42,10 @@ p {
   z-index: 1;
 }
 
+.tooltiptext {
+  font-size: 1rem;
+}
+
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
@@ -49,4 +53,8 @@ p {
 .tooltip:hover {
   color: #6e672f;
   transition: 0.4s;
+}
+
+.fake-p {
+  word-wrap: normal;
 }

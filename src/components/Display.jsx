@@ -25,9 +25,9 @@ class Display extends Component {
         });
 
         return (
-            <p>
+            <div className="fake-p">
                 {characterArray}
-            </p>
+            </div>
         );
     }
 }

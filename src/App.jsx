@@ -53,20 +53,11 @@ class App extends Component {
     handleCharacterSwitchClick(e) {
         const index = e.target.getAttribute("index");
         const character = e.target.innerText;
-        let data = e.target.getAttribute("data-siblingtone");
 
-        if (data) {
-            data = vietCharacterData[character];
-        }
 
-        console.log(character, index, data);
+        // console.log(character, index);
 
-        // This is functional. 
-        // Now check if the character is a "VIP" and we can do what we need to with it.
-        // if (parseInt(index, 10) === 5) {
-        //     console.log("It's 5");
-        //     this.switchCharacter(5, "!");
-        // }
+        this.switchCharacter(index, character);
     }
 
     // Swap state.characterArray current character with newChar at index

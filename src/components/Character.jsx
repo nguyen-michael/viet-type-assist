@@ -3,17 +3,25 @@ import Switcher from './Switcher';
 
 class Character extends Component {
     render() {
+        // Will not generate Switcher if doesn't have sibling or tones.
         return (
-            <span
-                onClick={this.props.handleCharacterSwitchClick}
-                index={this.props.index}
-                // we dont't actually need this data here...
-                data-siblingtone={this.props.hasSiblingsOrTones}
-                className="tooltip"
-            >
-                {this.props.value}
-                <Switcher />
-            </span>
+            this.props.hasSiblingsOrTones ?
+                <span
+                    className="tooltip"
+                >
+                    {this.props.value}
+                    <Switcher 
+                        handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
+                        index={this.props.index}
+                        siblingsTonesData={this.props.siblingsTonesData}
+                    />
+                </span>
+
+                :
+
+                <span>
+                    {this.props.value}
+                </span>
         );
     }
 }
