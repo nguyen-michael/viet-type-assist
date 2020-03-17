@@ -3,14 +3,26 @@ import Character from './Character';
 
 class Display extends Component {
     render() {
-        const characterArray = this.props.textArray.map((char, index) => (
-            <Character
-                key={index}
-                index={index}
-                value={char}
-                handleCharacterClick={this.props.handleCharacterClick}
-            />
-        ));
+        const vietCharacterData = this.props.vietCharacterData;
+        // Load the Character with data if applicable.
+        const characterArray = this.props.textArray.map((char, index) => {
+            let hasSiblingsOrTones = false;
+            let siblingsTonesData = undefined;
+            if (vietCharacterData.hasOwnProperty(char)) {
+                hasSiblingsOrTones = true;
+                siblingsTonesData = vietCharacterData[char]
+            }
+            return (
+                <Character
+                    key={index}
+                    index={index}
+                    value={char}
+                    handleCharacterClick={this.props.handleCharacterClick}
+                    hasSiblingsOrTones={hasSiblingsOrTones}
+                    siblingsTonesData={siblingsTonesData}
+                />
+            )
+        });
 
         return (
             <p>

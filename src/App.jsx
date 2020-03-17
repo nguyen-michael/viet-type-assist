@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Entry from './components/Entry';
 import Display from './components/Display';
+import vietCharacterData from './characterUtility';
 
 class App extends Component {
     constructor(props) {
@@ -52,8 +53,13 @@ class App extends Component {
     handleCharacterClick(e) {
         const index = e.target.getAttribute("index");
         const character = e.target.innerText;
+        let data = e.target.getAttribute("data-siblingtone");
 
-        console.log(character, index);
+        if (data) {
+            data = vietCharacterData[character];
+        }
+
+        console.log(character, index, data);
 
         // This is functional. 
         // Now check if the character is a "VIP" and we can do what we need to with it.
@@ -63,6 +69,7 @@ class App extends Component {
         // }
     }
 
+    // Swap state.characterArray current character with newChar at index
     switchCharacter(index, newChar) {
         let newCharacterArray = this.state.characterArray;
         newCharacterArray[index] = newChar;
@@ -87,6 +94,7 @@ class App extends Component {
                 <Display
                     textArray={this.state.characterArray}
                     handleCharacterClick={this.handleCharacterClick}
+                    vietCharacterData={vietCharacterData}
                 />
             </div>
         );

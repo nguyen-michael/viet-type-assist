@@ -1,4 +1,4 @@
-export default const finalObj = {
+const finalObj = {
     'a': { siblings: ['a', 'ă', 'â'], tones: ['a', 'á', 'à', 'ã', 'ả', 'ạ'] },
     'á': { siblings: ['á', 'ắ', 'ấ'], tones: ['a', 'á', 'à', 'ã', 'ả', 'ạ'] },
     'à': { siblings: ['à', 'ằ', 'ầ'], tones: ['a', 'á', 'à', 'ã', 'ả', 'ạ'] },
@@ -148,3 +148,5 @@ export default const finalObj = {
     'D': { siblings: ['D', 'Đ'], tones: [] },
     'Đ': { siblings: ['D', 'Đ'], tones: [] }
 };
+
+export default finalObj;
