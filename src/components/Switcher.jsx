@@ -27,14 +27,16 @@ class Switcher extends Component {
 
 
         return (
-            <span className="tooltiptext">
+            <span 
+                className="tooltiptext text-gray-800 bg-white absolute z-10 invisible text-center border border-gray-400 rounded"
+            >
                 {
                     tonesSwitches.length === 0 ?
                         null
                         :
                         tonesSwitches
                 }
-                <br />
+                {(tonesSwitches.length === 0 || siblingsSwitches.length === 0) ? null : "|"}
                 {
                     siblingsSwitches.length === 0 ?
                         null

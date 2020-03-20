@@ -7,31 +7,22 @@ body {
 }
 
 /*  Tool Tip */
-.tooltip {
-  position: relative;
-  /* display: inline-block; */
-  /* border-bottom: 1px dotted black; */
-}
-
-.tooltip .tooltiptext {
-  visibility: hidden;
+.tooltiptext {
+  /* position: absolute; */
+  /* z-index: 1; */
+  /* visibility: hidden; */
   width: 7rem;
-  background-color: #dddddd;
-  color: #fff;
-  text-align: center;
-  border-radius: 6px;
-  padding: 5px;
+  /* text-align: center; */
+  /* border-radius: 6px; */
+  padding: 10px;
   bottom: 100%;
-  margin-left: -4rem;
+  margin-left: -3.5rem;
+  /* border: 1px solid black; */
 
   /* Position the tooltip */
-  position: absolute;
-  z-index: 1;
-}
-
-.tooltiptext {
   font-size: 1rem;
 }
+
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
@@ -44,4 +35,33 @@ body {
 
 textarea {
   width: 100%;
+}
+
+/* Fixed positioned display for phone sizes */
+@media only screen and (max-width: 767px) {
+  .tooltiptext {
+    position: fixed;
+    z-index: 1;
+    visibility: hidden;
+    
+    padding: 15px;
+
+    width: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    
+  }
+}
+
+/* Keep buttons on one row on the smallest screens */
+@media only screen and (max-width: 359px) {
+  .tooltiptext > button{
+    margin: 0.25rem;
+    padding: 0 0.4rem;
+  }
 }

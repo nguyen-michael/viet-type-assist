@@ -7,7 +7,7 @@ class Character extends Component {
         return (
             this.props.hasSiblingsOrTones ?
                 <span
-                    className="tooltip"
+                    className="tooltip relative"
                 >
                     {this.props.value}
                     <Switcher 

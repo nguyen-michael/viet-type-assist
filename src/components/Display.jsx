@@ -25,7 +25,7 @@ class Display extends Component {
         });
 
         return (
-            <div className="text-3xl">
+            <div className="text-3xl break-normal mb-32">
                 {characterArray}
             </div>
         );

@@ -85,7 +85,7 @@ class App extends Component {
     render() {
         return (
             <div 
-                className="mx-4 my-2" 
+                className="mx-4 my-2 md:mx-20 md:my-4" 
             >
                 <Introduction 
                     handleLanguageToggle={this.handleLanguageToggle}
