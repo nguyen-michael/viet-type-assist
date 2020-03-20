@@ -36,6 +36,7 @@ class App extends Component {
     handleClear() {
         this.setState({
             rawText: "",
+            characterArray: [],
             copySuccess: false
         });
     }
@@ -83,7 +84,9 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div 
+                className="mx-4 my-2" 
+            >
                 <Introduction 
                     handleLanguageToggle={this.handleLanguageToggle}
                     isUIVietnamese={this.state.vietnameseUILanguage}

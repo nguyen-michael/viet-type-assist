@@ -25,7 +25,7 @@ class Display extends Component {
         });
 
         return (
-            <div className="fake-p">
+            <div className="text-3xl">
                 {characterArray}
             </div>
         );
