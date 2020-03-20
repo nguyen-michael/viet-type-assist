@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Entry from './components/Entry';
 import Display from './components/Display';
 import vietCharacterData from './characterUtility';
+import Introduction from './components/Introduction';
 
 class App extends Component {
     constructor(props) {
@@ -10,7 +11,8 @@ class App extends Component {
         this.state = {
             rawText: "",
             characterArray: [],
-            copySuccess: false
+            copySuccess: false,
+            vietnameseUILanguage: false
         }
 
         this.textAreaRef = React.createRef();
@@ -20,6 +22,7 @@ class App extends Component {
         this.handleCopy = this.handleCopy.bind(this);
         this.handleCharacterSwitchClick = this.handleCharacterSwitchClick.bind(this);
         this.switchCharacter = this.switchCharacter.bind(this);
+        this.handleLanguageToggle = this.handleLanguageToggle.bind(this);
     }
 
     handleTextChange(e) {
@@ -71,9 +74,20 @@ class App extends Component {
         });
     }
 
+    handleLanguageToggle() {
+        const toggledState = !this.state.vietnameseUILanguage
+        this.setState({
+            vietnameseUILanguage: toggledState
+        });
+    }
+
     render() {
         return (
             <div>
+                <Introduction 
+                    handleLanguageToggle={this.handleLanguageToggle}
+                    isUIVietnamese={this.state.vietnameseUILanguage}
+                />
                 <Entry
                     handleTextChange={this.handleTextChange}
                     text={this.state.rawText}
@@ -81,6 +95,7 @@ class App extends Component {
                     handleCopy={this.handleCopy}
                     textAreaRef={this.textAreaRef}
                     copySuccess={this.state.copySuccess}
+                    isUIVietnamese={this.state.vietnameseUILanguage}
                 />
                 <Display
                     textArray={this.state.characterArray}

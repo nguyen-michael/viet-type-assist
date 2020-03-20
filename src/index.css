@@ -1,22 +1,9 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: -apple-system, BlinkMacSystemFont, 'Source Sans Pro', 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-/* Dev Stuff, Clean up or finalize when deploying */
-span {
-  font-size: 2.5rem;
-  font-weight: bold;
-  letter-spacing: 1px;
 }
 
 /*  Tool Tip */
@@ -29,13 +16,13 @@ span {
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 7rem;
-  background-color: black;
+  background-color: #dddddd;
   color: #fff;
   text-align: center;
   border-radius: 6px;
-  padding: 5px 0;
+  padding: 5px;
   bottom: 100%;
-  margin-left: -60px;
+  margin-left: -4rem;
 
   /* Position the tooltip */
   position: absolute;
@@ -57,4 +44,9 @@ span {
 
 .fake-p {
   word-wrap: normal;
+  font-size: 2rem;
+}
+
+textarea {
+  width: 100%;
 }

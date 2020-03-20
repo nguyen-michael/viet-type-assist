@@ -10,8 +10,7 @@ class Entry extends Component {
                     value={this.props.text}
                     ref={this.props.textAreaRef}
                     rows="4"
-                    cols="80"
-                    placeholder="Type here / Gõ chữ ở đây"
+                    placeholder={this.props.isUIVietnamese ? "Gõ chữ ở đây" : "Type here"}
                 />
                 <button onClick={this.props.handleClear}>Clear</button>
                 <button onClick={this.props.handleCopy}>Copy to Clipboard</button>
