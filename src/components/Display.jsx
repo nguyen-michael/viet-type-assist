@@ -33,7 +33,10 @@ class Display extends Component {
         });
 
         return (
-            <div className="text-3xl break-normal mb-32 border border-gray-300 p-2">
+            <div
+                className="text-3xl break-normal mb-32 border border-gray-300 p-2"
+                onClick={this.props.handleDisplayClick}
+            >
                 {characterArray.length === 0 ? placeholderText : characterArray}
             </div>
         );

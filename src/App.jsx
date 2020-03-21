@@ -23,6 +23,7 @@ class App extends Component {
         this.handleCharacterSwitchClick = this.handleCharacterSwitchClick.bind(this);
         this.switchCharacter = this.switchCharacter.bind(this);
         this.handleLanguageToggle = this.handleLanguageToggle.bind(this);
+        this.handleDisplayClick = this.handleDisplayClick.bind(this);
     }
 
     handleTextChange(e) {
@@ -54,12 +55,13 @@ class App extends Component {
         });
     }
 
+    handleDisplayClick() {
+        this.textAreaRef.current.focus();
+    }
+
     handleCharacterSwitchClick(e) {
         const index = e.target.getAttribute("index");
         const character = e.target.innerText;
-
-
-        // console.log(character, index);
 
         this.switchCharacter(index, character);
     }
@@ -84,12 +86,19 @@ class App extends Component {
 
     render() {
         return (
-            <div 
-                className="mx-4 my-2 md:mx-20 md:my-4" 
+            <div
+                className="mx-4 my-2 md:mx-20 md:my-4"
             >
-                <Introduction 
+                <Introduction
                     handleLanguageToggle={this.handleLanguageToggle}
                     isUIVietnamese={this.state.vietnameseUILanguage}
+                />
+                <Display
+                    textArray={this.state.characterArray}
+                    handleCharacterSwitchClick={this.handleCharacterSwitchClick}
+                    vietCharacterData={vietCharacterData}
+                    isUIVietnamese={this.state.vietnameseUILanguage}
+                    handleDisplayClick={this.handleDisplayClick}
                 />
                 <Entry
                     handleTextChange={this.handleTextChange}
@@ -98,12 +107,6 @@ class App extends Component {
                     handleCopy={this.handleCopy}
                     textAreaRef={this.textAreaRef}
                     copySuccess={this.state.copySuccess}
-                    isUIVietnamese={this.state.vietnameseUILanguage}
-                />
-                <Display
-                    textArray={this.state.characterArray}
-                    handleCharacterSwitchClick={this.handleCharacterSwitchClick}
-                    vietCharacterData={vietCharacterData}
                     isUIVietnamese={this.state.vietnameseUILanguage}
                 />
             </div>
