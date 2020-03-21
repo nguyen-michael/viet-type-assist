@@ -104,6 +104,7 @@ class App extends Component {
                     textArray={this.state.characterArray}
                     handleCharacterSwitchClick={this.handleCharacterSwitchClick}
                     vietCharacterData={vietCharacterData}
+                    isUIVietnamese={this.state.vietnameseUILanguage}
                 />
             </div>
         );

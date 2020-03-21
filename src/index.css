@@ -41,15 +41,17 @@ textarea {
 
     margin-left: auto;
     margin-right: auto;
+  }
 
-    
+  .tooltiptext > button{
+    margin: 0.25rem;
+    padding: 0.1rem 0.7rem;
+    font-size: 1.3rem;
+
   }
 }
 
 /* Keep buttons on one row on the smallest screens */
 @media only screen and (max-width: 359px) {
-  .tooltiptext > button{
-    margin: 0.25rem;
-    padding: 0 0.4rem;
-  }
+
 }

@@ -18,7 +18,7 @@ class Entry extends Component {
                     onChange={this.props.handleTextChange}
                     value={this.props.text}
                     ref={this.props.textAreaRef}
-                    rows="4"
+                    rows="1"
                     placeholder={textAreaPlaceholder}
                     className="border mb-4 p-2"
                 />
