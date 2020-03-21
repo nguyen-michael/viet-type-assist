@@ -13,15 +13,6 @@ class Entry extends Component {
 
         return (
             <div>
-                <textarea
-                    type="text"
-                    onChange={this.props.handleTextChange}
-                    value={this.props.text}
-                    ref={this.props.textAreaRef}
-                    rows="1"
-                    placeholder={textAreaPlaceholder}
-                    className="border mb-4 p-2"
-                />
                 <button
                     onClick={this.props.handleCopy}
                     className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-4 border border-gray-400 rounded"
@@ -38,6 +29,15 @@ class Entry extends Component {
                     this.props.copySuccess ?
                         <p>{copiedText}</p> : <p className="mb-6"></p>
                 }
+                <textarea
+                    type="text"
+                    onChange={this.props.handleTextChange}
+                    value={this.props.text}
+                    ref={this.props.textAreaRef}
+                    rows="1"
+                    placeholder={textAreaPlaceholder}
+                />
+
             </div>
         );
     }

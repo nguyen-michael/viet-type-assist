@@ -12,7 +12,8 @@ class App extends Component {
             rawText: "",
             characterArray: [],
             copySuccess: false,
-            vietnameseUILanguage: false
+            vietnameseUILanguage: false,
+            textareaSelected: false
         }
 
         this.textAreaRef = React.createRef();
@@ -38,7 +39,8 @@ class App extends Component {
         this.setState({
             rawText: "",
             characterArray: [],
-            copySuccess: false
+            copySuccess: false,
+            textareaSelected: false
         });
     }
 
@@ -51,12 +53,17 @@ class App extends Component {
         e.target.focus();
 
         this.setState({
-            copySuccess: true
+            copySuccess: true,
+            textareaSelected: false
         });
     }
 
     handleDisplayClick() {
         this.textAreaRef.current.focus();
+
+        this.setState({
+            textareaSelected: true
+        });
     }
 
     handleCharacterSwitchClick(e) {
@@ -73,14 +80,16 @@ class App extends Component {
         let newRawText = newCharacterArray.join("");
         this.setState({
             rawText: newRawText,
-            characterArray: newCharacterArray
+            characterArray: newCharacterArray,
+            textareaSelected: false
         });
     }
 
     handleLanguageToggle() {
         const toggledState = !this.state.vietnameseUILanguage
         this.setState({
-            vietnameseUILanguage: toggledState
+            vietnameseUILanguage: toggledState,
+            textareaSelected: false
         });
     }
 
@@ -99,6 +108,7 @@ class App extends Component {
                     vietCharacterData={vietCharacterData}
                     isUIVietnamese={this.state.vietnameseUILanguage}
                     handleDisplayClick={this.handleDisplayClick}
+                    isTextareaSelected={this.state.textareaSelected}
                 />
                 <Entry
                     handleTextChange={this.handleTextChange}
