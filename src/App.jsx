@@ -61,6 +61,11 @@ class App extends Component {
     handleDisplayClick() {
         this.textAreaRef.current.focus();
 
+        // Focuses input to end of line on refocus.
+        const tempVal = this.textAreaRef.current.value;
+        this.textAreaRef.current.value = '';
+        this.textAreaRef.current.value = tempVal;
+
         this.setState({
             textareaSelected: true
         });
