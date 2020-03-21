@@ -6,7 +6,7 @@ class Introduction extends Component {
 
         const languageButtonText = isUIVietnamese ? "Switch to English" : "Dịch sang tiếng Việt";
         const headerText = isUIVietnamese ? "Giứp gõ chữ dấu tiếng Việt" : "Vietnamese Text Type Assist";
-        const InstructionsText = isUIVietnamese ? "Hướng dẫn: Gõ vào hợp ở dưới. Bấm chữ lớn cho trọn dấu. Khi nào xong, sao chép trong hợp hoặc bấm nút sao chép vào clipboard." : "Instructions: Type into the box. Tap the larger letters to change their forms. When finished, copy from box or tap copy to clipboard.";
+        const InstructionsText = isUIVietnamese ? "Hướng dẫn: Gõ vào hợp ở dưới. Bấm hoặc di con trỏ (vi tính) chữ cho trọn dấu." : "Instructions: Type into the box. Tap on or hover over (desktop) the letters to edit their tones / marks.";
 
         return (
             <div

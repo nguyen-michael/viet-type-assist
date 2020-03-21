@@ -3,12 +3,12 @@ import React, { Component } from 'react';
 class Entry extends Component {
     render() {
         const isUIVietnamese = this.props.isUIVietnamese;
-
+        const copySuccess = this.props.copySuccess;
 
         const textAreaPlaceholder = isUIVietnamese ? "Gõ chữ ở đây" : "Type here";
         const copyButtonText = isUIVietnamese ? "Sao chép vào clipboard" : "Copy to clipboard";
         const clearButtonText = isUIVietnamese ? "Xóa hết!" : "Clear all!";
-        const copiedText = isUIVietnamese ? "Sao chép rồi" : "Successfully Copied!"
+        const copiedText = isUIVietnamese ? "Sao chép được rồi" : "Successfully Copied!"
 
 
         return (
@@ -17,7 +17,7 @@ class Entry extends Component {
                     onClick={this.props.handleCopy}
                     className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-4 border border-gray-400 rounded"
                 >
-                    {copyButtonText}
+                    {copySuccess ? <span className="text-green-400">{copiedText}</span> : copyButtonText}
                 </button>
                 <button
                     onClick={this.props.handleClear}
@@ -25,10 +25,6 @@ class Entry extends Component {
                 >
                     {clearButtonText}
                 </button>
-                {
-                    this.props.copySuccess ?
-                        <p>{copiedText}</p> : <p className="mb-6"></p>
-                }
                 <textarea
                     type="text"
                     onChange={this.props.handleTextChange}

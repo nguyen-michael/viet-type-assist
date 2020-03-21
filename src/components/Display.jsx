@@ -9,7 +9,7 @@ class Display extends Component {
 
         const placeholderText = (
             <p className="text-gray-400">
-                {isUIVietnamese ? "Chữ có thể bấm được hiện ở đây" : "Selectable text will appear here"}
+                {isUIVietnamese ? "Gõ chữ ở đây" : "Type here."}
             </p>
         );
 
@@ -41,7 +41,7 @@ class Display extends Component {
 
         return (
             <div
-                className="text-3xl break-normal mb-8 border border-gray-300 p-2"
+                className="text-3xl break-normal mb-8 border-2 border-dotted border-gray-300 p-2"
                 onClick={this.props.handleDisplayClick}
             >
                 {(characterArray.length === 0 && !isTextareaSelected) ? placeholderText : characterArray}
