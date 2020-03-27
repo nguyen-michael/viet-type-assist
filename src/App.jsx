@@ -13,7 +13,8 @@ class App extends Component {
             characterArray: [],
             copySuccess: false,
             vietnameseUILanguage: false,
-            textareaSelected: false
+            textareaSelected: false,
+            textareaFocusIndex: 0
         }
 
         this.textAreaRef = React.createRef();
@@ -26,13 +27,26 @@ class App extends Component {
         this.handleLanguageToggle = this.handleLanguageToggle.bind(this);
         this.handleDisplayClick = this.handleDisplayClick.bind(this);
         this.handleCharacterTap = this.handleCharacterTap.bind(this);
+        this.handleSelectChange = this.handleSelectChange.bind(this);
     }
 
     handleTextChange(e) {
+        const focusIndex = this.textAreaRef.current.selectionStart;
+
         this.setState({
             rawText: e.target.value,
             characterArray: [...e.target.value],
-            copySuccess: false
+            copySuccess: false,
+            textareaFocusIndex: focusIndex
+        });
+    }
+
+    // Checks for keyboard cursor movement
+    handleSelectChange() {
+        const focusIndex = this.textAreaRef.current.selectionStart;
+
+        this.setState({
+            textareaFocusIndex: focusIndex
         });
     }
 
@@ -41,7 +55,8 @@ class App extends Component {
             rawText: "",
             characterArray: [],
             copySuccess: false,
-            textareaSelected: false
+            textareaSelected: false,
+            textareaFocusIndex: 0
         });
     }
 
@@ -61,6 +76,8 @@ class App extends Component {
 
     // Clicking EOL/EOS whitespace in Display will focus cursor to end of string input.
     handleDisplayClick() {
+        const focusIndex = this.state.characterArray.length;
+
         this.textAreaRef.current.focus();
         console.log("focus");
 
@@ -70,7 +87,8 @@ class App extends Component {
         this.textAreaRef.current.value = tempVal;
 
         this.setState({
-            textareaSelected: true
+            textareaSelected: true,
+            textareaFocusIndex: focusIndex
         });
     }
 
@@ -101,14 +119,34 @@ class App extends Component {
         });
     }
 
-    // Defocuses (Blurs) the input so the keyboard goes away on mobile when a character is tapped.
-    handleCharacterTap() {
-        this.textAreaRef.current.blur();
-        console.log("blur");
 
-        this.setState({
-            textareaSelected: false
-        });
+    handleCharacterTap(e) {
+        // Defocuses (Blurs) the input so the keyboard goes away on mobile when a character is tapped.
+        if (e.target.classList.contains("tooltip")) {
+            this.textAreaRef.current.blur();
+            console.log("blur");
+
+            this.setState({
+                textareaSelected: false
+            });
+        }
+        // Otherwise, place cursor in place in textarea.
+        else {
+            const index = e.target.getAttribute("index");
+
+            console.log("focus at: ", e.target.getAttribute("index"));
+
+            this.textAreaRef.current.focus();
+            this.textAreaRef.current.setSelectionRange(index, index);
+
+            this.setState({
+                textareaSelected: true,
+                textareaFocusIndex: index
+            });
+
+            
+        }
+
     }
 
     render() {
@@ -127,6 +165,7 @@ class App extends Component {
                     isUIVietnamese={this.state.vietnameseUILanguage}
                     handleDisplayClick={this.handleDisplayClick}
                     isTextareaSelected={this.state.textareaSelected}
+                    textareaFocusIndex={this.state.textareaFocusIndex}
                     handleCharacterTap={this.handleCharacterTap}
                 />
                 <Entry
@@ -137,6 +176,7 @@ class App extends Component {
                     textAreaRef={this.textAreaRef}
                     copySuccess={this.state.copySuccess}
                     isUIVietnamese={this.state.vietnameseUILanguage}
+                    handleSelectChange={this.handleSelectChange}
                 />
             </div>
         );

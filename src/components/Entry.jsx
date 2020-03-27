@@ -32,6 +32,7 @@ class Entry extends Component {
                     ref={this.props.textAreaRef}
                     rows="1"
                     placeholder={textAreaPlaceholder}
+                    onSelect={this.props.handleSelectChange}
                 />
 
             </div>

@@ -6,6 +6,8 @@ class Display extends Component {
         const vietCharacterData = this.props.vietCharacterData;
         const isUIVietnamese = this.props.isUIVietnamese;
         const isTextareaSelected = this.props.isTextareaSelected;
+        const textareaFocusIndex = parseInt(this.props.textareaFocusIndex, 10);
+        const isTextareaFocusInnerText = textareaFocusIndex !== this.props.textArray.length;
 
         const placeholderText = (
             <p
@@ -31,15 +33,18 @@ class Display extends Component {
                 siblingsTonesData = vietCharacterData[char]
             }
             return (
-                <Character
-                    key={index}
-                    index={index}
-                    value={value}
-                    handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
-                    handleCharacterTap={this.props.handleCharacterTap}
-                    hasSiblingsOrTones={hasSiblingsOrTones}
-                    siblingsTonesData={siblingsTonesData}
-                />
+                <>
+                    {index === textareaFocusIndex ? <span className="font-bolder blinker">|</span> : null}
+                    <Character
+                        key={index}
+                        index={index}
+                        value={value}
+                        handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
+                        handleCharacterTap={this.props.handleCharacterTap}
+                        hasSiblingsOrTones={hasSiblingsOrTones}
+                        siblingsTonesData={siblingsTonesData}
+                    />
+                </>
             )
         });
 
@@ -48,7 +53,7 @@ class Display extends Component {
                 className="text-3xl break-normal mb-8 border-2 border-dotted border-gray-300 p-2 flex flex-wrap"
             >
                 {(characterArray.length === 0 && !isTextareaSelected) ? placeholderText : characterArray}
-                {isTextareaSelected ? <span className="font-bolder blinker">|</span> : null}
+                {isTextareaSelected && !isTextareaFocusInnerText ? <span className="font-bolder blinker">|</span> : null}
                 {(characterArray.length === 0 && !isTextareaSelected) ? null : <div className="flex-grow" onClick={this.props.handleDisplayClick}></div>}
             </div>
         );

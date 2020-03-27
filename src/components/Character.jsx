@@ -9,9 +9,10 @@ class Character extends Component {
                 <span
                     className="tooltip relative"
                     onClick={this.props.handleCharacterTap}
+                    index={this.props.index}
                 >
                     {this.props.value}
-                    <Switcher 
+                    <Switcher
                         handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
                         index={this.props.index}
                         siblingsTonesData={this.props.siblingsTonesData}
@@ -20,7 +21,10 @@ class Character extends Component {
 
                 :
 
-                <span onClick={this.props.handleCharacterTap}>
+                <span
+                    onClick={this.props.handleCharacterTap}
+                    index={this.props.index}
+                >
                     {this.props.value}
                 </span>
         );
