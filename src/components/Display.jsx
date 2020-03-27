@@ -33,7 +33,7 @@ class Display extends Component {
                 siblingsTonesData = vietCharacterData[char]
             }
             return (
-                <>
+                <React.Fragment key={index}>
                     {index === textareaFocusIndex ? <span className="font-bolder blinker">|</span> : null}
                     <Character
                         key={index}
@@ -44,7 +44,7 @@ class Display extends Component {
                         hasSiblingsOrTones={hasSiblingsOrTones}
                         siblingsTonesData={siblingsTonesData}
                     />
-                </>
+                </React.Fragment>
             )
         });
 

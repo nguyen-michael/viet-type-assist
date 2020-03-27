@@ -33,6 +33,7 @@ class Entry extends Component {
                     rows="1"
                     placeholder={textAreaPlaceholder}
                     onSelect={this.props.handleSelectChange}
+                    onBlur={this.props.handleTextareaBlur}
                 />
 
             </div>

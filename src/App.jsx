@@ -28,6 +28,7 @@ class App extends Component {
         this.handleDisplayClick = this.handleDisplayClick.bind(this);
         this.handleCharacterTap = this.handleCharacterTap.bind(this);
         this.handleSelectChange = this.handleSelectChange.bind(this);
+        this.handleTextareaBlur = this.handleTextareaBlur.bind(this);
     }
 
     handleTextChange(e) {
@@ -47,6 +48,12 @@ class App extends Component {
 
         this.setState({
             textareaFocusIndex: focusIndex
+        });
+    }
+
+    handleTextareaBlur() {
+        this.setState({
+            textareaSelected: false
         });
     }
 
@@ -177,6 +184,7 @@ class App extends Component {
                     copySuccess={this.state.copySuccess}
                     isUIVietnamese={this.state.vietnameseUILanguage}
                     handleSelectChange={this.handleSelectChange}
+                    handleTextareaBlur={this.handleTextareaBlur}
                 />
             </div>
         );
