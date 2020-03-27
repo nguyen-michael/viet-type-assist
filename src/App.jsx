@@ -25,6 +25,7 @@ class App extends Component {
         this.switchCharacter = this.switchCharacter.bind(this);
         this.handleLanguageToggle = this.handleLanguageToggle.bind(this);
         this.handleDisplayClick = this.handleDisplayClick.bind(this);
+        this.handleCharacterTap = this.handleCharacterTap.bind(this);
     }
 
     handleTextChange(e) {
@@ -58,8 +59,10 @@ class App extends Component {
         });
     }
 
+    // Clicking EOL/EOS whitespace in Display will focus cursor to end of string input.
     handleDisplayClick() {
         this.textAreaRef.current.focus();
+        console.log("focus");
 
         // Focuses input to end of line on refocus.
         const tempVal = this.textAreaRef.current.value;
@@ -98,6 +101,16 @@ class App extends Component {
         });
     }
 
+    // Defocuses (Blurs) the input so the keyboard goes away on mobile when a character is tapped.
+    handleCharacterTap() {
+        this.textAreaRef.current.blur();
+        console.log("blur");
+
+        this.setState({
+            textareaSelected: false
+        });
+    }
+
     render() {
         return (
             <div
@@ -114,6 +127,7 @@ class App extends Component {
                     isUIVietnamese={this.state.vietnameseUILanguage}
                     handleDisplayClick={this.handleDisplayClick}
                     isTextareaSelected={this.state.textareaSelected}
+                    handleCharacterTap={this.handleCharacterTap}
                 />
                 <Entry
                     handleTextChange={this.handleTextChange}

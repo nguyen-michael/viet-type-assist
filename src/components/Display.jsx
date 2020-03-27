@@ -8,7 +8,10 @@ class Display extends Component {
         const isTextareaSelected = this.props.isTextareaSelected;
 
         const placeholderText = (
-            <p className="text-gray-400">
+            <p
+                className="text-gray-400 flex-grow"
+                onClick={this.props.handleDisplayClick}
+            >
                 {isUIVietnamese ? "Gõ chữ ở đây" : "Type here."}
             </p>
         );
@@ -33,6 +36,7 @@ class Display extends Component {
                     index={index}
                     value={value}
                     handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
+                    handleCharacterTap={this.props.handleCharacterTap}
                     hasSiblingsOrTones={hasSiblingsOrTones}
                     siblingsTonesData={siblingsTonesData}
                 />
@@ -41,11 +45,11 @@ class Display extends Component {
 
         return (
             <div
-                className="text-3xl break-normal mb-8 border-2 border-dotted border-gray-300 p-2"
-                onClick={this.props.handleDisplayClick}
+                className="text-3xl break-normal mb-8 border-2 border-dotted border-gray-300 p-2 flex flex-wrap"
             >
                 {(characterArray.length === 0 && !isTextareaSelected) ? placeholderText : characterArray}
                 {isTextareaSelected ? <span className="font-bolder blinker">|</span> : null}
+                {(characterArray.length === 0 && !isTextareaSelected) ? null : <div className="flex-grow" onClick={this.props.handleDisplayClick}></div>}
             </div>
         );
     }
