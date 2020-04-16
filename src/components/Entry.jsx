@@ -13,6 +13,16 @@ class Entry extends Component {
 
         return (
             <div>
+                <textarea
+                    type="text"
+                    onChange={this.props.handleTextChange}
+                    value={this.props.text}
+                    ref={this.props.textAreaRef}
+                    rows="1"
+                    placeholder={textAreaPlaceholder}
+                    onSelect={this.props.handleSelectChange}
+                    className="mb-4 border-2 border-solid border-gray-200 p-2"
+                />
                 <button
                     onClick={this.props.handleCopy}
                     className="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-1 px-4 border border-gray-400 rounded"
@@ -25,17 +35,6 @@ class Entry extends Component {
                 >
                     {clearButtonText}
                 </button>
-                <textarea
-                    type="text"
-                    onChange={this.props.handleTextChange}
-                    value={this.props.text}
-                    ref={this.props.textAreaRef}
-                    rows="1"
-                    placeholder={textAreaPlaceholder}
-                    onSelect={this.props.handleSelectChange}
-                    onBlur={this.props.handleTextareaBlur}
-                />
-
             </div>
         );
     }

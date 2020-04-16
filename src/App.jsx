@@ -12,9 +12,7 @@ class App extends Component {
             rawText: "",
             characterArray: [],
             copySuccess: false,
-            vietnameseUILanguage: false,
-            textareaSelected: false,
-            textareaFocusIndex: 0
+            vietnameseUILanguage: false
         }
 
         this.textAreaRef = React.createRef();
@@ -25,35 +23,13 @@ class App extends Component {
         this.handleCharacterSwitchClick = this.handleCharacterSwitchClick.bind(this);
         this.switchCharacter = this.switchCharacter.bind(this);
         this.handleLanguageToggle = this.handleLanguageToggle.bind(this);
-        this.handleDisplayClick = this.handleDisplayClick.bind(this);
-        this.handleCharacterTap = this.handleCharacterTap.bind(this);
-        this.handleSelectChange = this.handleSelectChange.bind(this);
-        this.handleTextareaBlur = this.handleTextareaBlur.bind(this);
     }
 
     handleTextChange(e) {
-        const focusIndex = this.textAreaRef.current.selectionStart;
-
         this.setState({
             rawText: e.target.value,
             characterArray: [...e.target.value],
-            copySuccess: false,
-            textareaFocusIndex: focusIndex
-        });
-    }
-
-    // Checks for keyboard cursor movement
-    handleSelectChange() {
-        const focusIndex = this.textAreaRef.current.selectionStart;
-
-        this.setState({
-            textareaFocusIndex: focusIndex
-        });
-    }
-
-    handleTextareaBlur() {
-        this.setState({
-            textareaSelected: false
+            copySuccess: false
         });
     }
 
@@ -61,9 +37,7 @@ class App extends Component {
         this.setState({
             rawText: "",
             characterArray: [],
-            copySuccess: false,
-            textareaSelected: false,
-            textareaFocusIndex: 0
+            copySuccess: false
         });
     }
 
@@ -76,26 +50,7 @@ class App extends Component {
         e.target.focus();
 
         this.setState({
-            copySuccess: true,
-            textareaSelected: false
-        });
-    }
-
-    // Clicking EOL/EOS whitespace in Display will focus cursor to end of string input.
-    handleDisplayClick() {
-        const focusIndex = this.state.characterArray.length;
-
-        this.textAreaRef.current.focus();
-        console.log("focus");
-
-        // Focuses input to end of line on refocus.
-        const tempVal = this.textAreaRef.current.value;
-        this.textAreaRef.current.value = '';
-        this.textAreaRef.current.value = tempVal;
-
-        this.setState({
-            textareaSelected: true,
-            textareaFocusIndex: focusIndex
+            copySuccess: true
         });
     }
 
@@ -113,47 +68,15 @@ class App extends Component {
         let newRawText = newCharacterArray.join("");
         this.setState({
             rawText: newRawText,
-            characterArray: newCharacterArray,
-            textareaSelected: false
+            characterArray: newCharacterArray
         });
     }
 
     handleLanguageToggle() {
         const toggledState = !this.state.vietnameseUILanguage
         this.setState({
-            vietnameseUILanguage: toggledState,
-            textareaSelected: false
+            vietnameseUILanguage: toggledState
         });
-    }
-
-
-    handleCharacterTap(e) {
-        // Defocuses (Blurs) the input so the keyboard goes away on mobile when a character is tapped.
-        if (e.target.classList.contains("tooltip")) {
-            this.textAreaRef.current.blur();
-            console.log("blur");
-
-            this.setState({
-                textareaSelected: false
-            });
-        }
-        // Otherwise, place cursor in place in textarea.
-        else {
-            const index = e.target.getAttribute("index");
-
-            console.log("focus at: ", e.target.getAttribute("index"));
-
-            this.textAreaRef.current.focus();
-            this.textAreaRef.current.setSelectionRange(index, index);
-
-            this.setState({
-                textareaSelected: true,
-                textareaFocusIndex: index
-            });
-
-            
-        }
-
     }
 
     render() {
@@ -170,10 +93,6 @@ class App extends Component {
                     handleCharacterSwitchClick={this.handleCharacterSwitchClick}
                     vietCharacterData={vietCharacterData}
                     isUIVietnamese={this.state.vietnameseUILanguage}
-                    handleDisplayClick={this.handleDisplayClick}
-                    isTextareaSelected={this.state.textareaSelected}
-                    textareaFocusIndex={this.state.textareaFocusIndex}
-                    handleCharacterTap={this.handleCharacterTap}
                 />
                 <Entry
                     handleTextChange={this.handleTextChange}
@@ -183,8 +102,6 @@ class App extends Component {
                     textAreaRef={this.textAreaRef}
                     copySuccess={this.state.copySuccess}
                     isUIVietnamese={this.state.vietnameseUILanguage}
-                    handleSelectChange={this.handleSelectChange}
-                    handleTextareaBlur={this.handleTextareaBlur}
                 />
             </div>
         );

@@ -5,16 +5,12 @@ class Display extends Component {
     render() {
         const vietCharacterData = this.props.vietCharacterData;
         const isUIVietnamese = this.props.isUIVietnamese;
-        const isTextareaSelected = this.props.isTextareaSelected;
-        const textareaFocusIndex = parseInt(this.props.textareaFocusIndex, 10);
-        const isTextareaFocusInnerText = textareaFocusIndex !== this.props.textArray.length;
 
         const placeholderText = (
             <p
                 className="text-gray-400 flex-grow"
-                onClick={this.props.handleDisplayClick}
             >
-                {isUIVietnamese ? "Gõ chữ ở đây" : "Type here."}
+                {isUIVietnamese ? "Chữ hiện ở đây" : "Text will appear here"}
             </p>
         );
 
@@ -33,28 +29,22 @@ class Display extends Component {
                 siblingsTonesData = vietCharacterData[char]
             }
             return (
-                <React.Fragment key={index}>
-                    {index === textareaFocusIndex ? <span className="font-bolder blinker">|</span> : null}
-                    <Character
-                        key={index}
-                        index={index}
-                        value={value}
-                        handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
-                        handleCharacterTap={this.props.handleCharacterTap}
-                        hasSiblingsOrTones={hasSiblingsOrTones}
-                        siblingsTonesData={siblingsTonesData}
-                    />
-                </React.Fragment>
+                <Character
+                    key={index}
+                    index={index}
+                    value={value}
+                    handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
+                    hasSiblingsOrTones={hasSiblingsOrTones}
+                    siblingsTonesData={siblingsTonesData}
+                />
             )
         });
 
         return (
             <div
-                className="text-3xl break-normal mb-8 border-2 border-dotted border-gray-300 p-2 flex flex-wrap"
+                className="text-3xl break-normal mb-6 border-2 border-dotted border-gray-200 p-2 flex flex-wrap"
             >
-                {(characterArray.length === 0 && !isTextareaSelected) ? placeholderText : characterArray}
-                {isTextareaSelected && !isTextareaFocusInnerText ? <span className="font-bolder blinker">|</span> : null}
-                {(characterArray.length === 0 && !isTextareaSelected) ? null : <div className="flex-grow" onClick={this.props.handleDisplayClick}></div>}
+                {(characterArray.length === 0) ? placeholderText : characterArray}
             </div>
         );
     }
