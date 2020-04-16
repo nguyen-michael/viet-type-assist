@@ -21,6 +21,7 @@ class Entry extends Component {
                     rows="1"
                     placeholder={textAreaPlaceholder}
                     onSelect={this.props.handleSelectChange}
+                    className="mb-4 border-2 border-solid border-gray-200 p-2"
                 />
                 <button
                     onClick={this.props.handleCopy}

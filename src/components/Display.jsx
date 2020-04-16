@@ -42,7 +42,7 @@ class Display extends Component {
 
         return (
             <div
-                className="text-3xl break-normal mb-8 border-2 border-dotted border-gray-200 p-2 flex flex-wrap"
+                className="text-3xl break-normal mb-6 border-2 border-dotted border-gray-200 p-2 flex flex-wrap"
             >
                 {(characterArray.length === 0) ? placeholderText : characterArray}
             </div>
