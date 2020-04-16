@@ -25,7 +25,6 @@ class Switcher extends Component {
             )
         });
 
-
         return (
             <span 
                 className="tooltiptext text-gray-800 bg-white absolute z-10 invisible text-center border border-gray-400 rounded text-base w-48 -ml-24 p-3"

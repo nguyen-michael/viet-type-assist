@@ -8,7 +8,6 @@ class Character extends Component {
             this.props.hasSiblingsOrTones ?
                 <span
                     className="tooltip relative"
-                    onClick={this.props.handleCharacterTap}
                     index={this.props.index}
                 >
                     {this.props.value}
@@ -22,7 +21,6 @@ class Character extends Component {
                 :
 
                 <span
-                    onClick={this.props.handleCharacterTap}
                     index={this.props.index}
                 >
                     {this.props.value}

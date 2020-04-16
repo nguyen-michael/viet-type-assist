@@ -25,18 +25,6 @@ textarea {
   width: 100%;
 }
 
-.blinker {
-  animation:blinkingText 1.1s infinite;
-}
-
-@keyframes blinkingText {
-  0%  {     color: #000;    }
-  49% {    color: #000; }
-  60% {    color: transparent; }
-  99%  {    color:transparent;  }
-  100%{   color: #000;    }
-}
-
 /* Fixed positioned display for phone sizes */
 @media only screen and (max-width: 767px) {
   .tooltiptext {
