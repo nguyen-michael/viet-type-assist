@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/viet-type-assist/static/css/main.a6217261.chunk.css",
-    "main.js": "/viet-type-assist/static/js/main.984bd39c.chunk.js",
-    "main.js.map": "/viet-type-assist/static/js/main.984bd39c.chunk.js.map",
+    "main.js": "/viet-type-assist/static/js/main.4b464a95.chunk.js",
+    "main.js.map": "/viet-type-assist/static/js/main.4b464a95.chunk.js.map",
     "runtime-main.js": "/viet-type-assist/static/js/runtime-main.0f3033fc.js",
     "runtime-main.js.map": "/viet-type-assist/static/js/runtime-main.0f3033fc.js.map",
     "static/js/2.e2d148bd.chunk.js": "/viet-type-assist/static/js/2.e2d148bd.chunk.js",
     "static/js/2.e2d148bd.chunk.js.map": "/viet-type-assist/static/js/2.e2d148bd.chunk.js.map",
     "index.html": "/viet-type-assist/index.html",
-    "precache-manifest.cc75cb16b630d9bb27716bb208f2aa94.js": "/viet-type-assist/precache-manifest.cc75cb16b630d9bb27716bb208f2aa94.js",
+    "precache-manifest.67c135930dd1676dcf6b2949e25351ce.js": "/viet-type-assist/precache-manifest.67c135930dd1676dcf6b2949e25351ce.js",
     "service-worker.js": "/viet-type-assist/service-worker.js",
     "static/css/main.a6217261.chunk.css.map": "/viet-type-assist/static/css/main.a6217261.chunk.css.map",
     "static/js/2.e2d148bd.chunk.js.LICENSE.txt": "/viet-type-assist/static/js/2.e2d148bd.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.0f3033fc.js",
     "static/js/2.e2d148bd.chunk.js",
     "static/css/main.a6217261.chunk.css",
-    "static/js/main.984bd39c.chunk.js"
+    "static/js/main.4b464a95.chunk.js"
   ]
 }
