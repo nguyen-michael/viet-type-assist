@@ -8,7 +8,7 @@ body {
 
 /*  Tool Tip */
 .tooltiptext {
-  bottom: 100%;
+  top: 100%;
 }
 
 

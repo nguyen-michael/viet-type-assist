@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class CharacterSwitch extends Component {
     // should also get index and on click
     render() {
-        let tailwindStyleString = "hover:bg-gray-200 text-gray-900 font-semibold px-2 border border-gray-400 rounded m-1";
+        let tailwindStyleString = "hover:bg-gray-200 text-gray-900 font-normal px-2 border border-gray-400 rounded m-1 text-2xl";
 
         if (this.props.character === this.props.currentCharacter) {
             tailwindStyleString = tailwindStyleString.concat(" bg-red-200 hover:bg-red-300");
