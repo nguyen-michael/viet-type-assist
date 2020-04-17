@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "295cc5da6cd8d9495ba565541c80d039",
+    "revision": "b57a3393978ea44e46049ab05445dc3b",
     "url": "/viet-type-assist/index.html"
   },
   {
-    "revision": "d6a8ee7f7b16b8ea356a",
-    "url": "/viet-type-assist/static/css/main.398055bb.chunk.css"
+    "revision": "bd2ae6ededacde687598",
+    "url": "/viet-type-assist/static/css/main.32bc2d3c.chunk.css"
   },
   {
     "revision": "88d9a59c57a710daf6e2",
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/viet-type-assist/static/js/2.e2d148bd.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "d6a8ee7f7b16b8ea356a",
+    "revision": "bd2ae6ededacde687598",
     "url": "/viet-type-assist/static/js/main.d7f09a96.chunk.js"
   },
   {
