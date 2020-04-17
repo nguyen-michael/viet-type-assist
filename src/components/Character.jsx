@@ -15,6 +15,7 @@ class Character extends Component {
                         handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
                         index={this.props.index}
                         siblingsTonesData={this.props.siblingsTonesData}
+                        currentCharacter={this.props.value}
                     />
                 </span>
 

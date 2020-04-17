@@ -8,8 +8,10 @@ class Switcher extends Component {
                 <CharacterSwitch
                     character={char}
                     characterIndex={this.props.index}
+                    currentCharacter={this.props.currentCharacter}
                     key={index}
                     handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
+                    toneOrSibling="tone"
                 />
             )
         });
@@ -19,8 +21,10 @@ class Switcher extends Component {
                 <CharacterSwitch
                     character={char}
                     characterIndex={this.props.index}
+                    currentCharacter={this.props.currentCharacter}
                     key={index}
                     handleCharacterSwitchClick={this.props.handleCharacterSwitchClick}
+                    toneOrSibling="sibling"
                 />
             )
         });
