@@ -64,12 +64,15 @@ class App extends Component {
     // Swap state.characterArray current character with newChar at index
     switchCharacter(index, newChar) {
         let newCharacterArray = this.state.characterArray;
-        newCharacterArray[index] = newChar;
-        let newRawText = newCharacterArray.join("");
-        this.setState({
-            rawText: newRawText,
-            characterArray: newCharacterArray
-        });
+        if (newCharacterArray[index] !== newChar) {
+            newCharacterArray[index] = newChar;
+            let newRawText = newCharacterArray.join("");
+            this.setState({
+                rawText: newRawText,
+                characterArray: newCharacterArray,
+                copySuccess: false
+            });
+        }
     }
 
     handleLanguageToggle() {
