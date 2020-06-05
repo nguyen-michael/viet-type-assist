@@ -8,12 +8,14 @@ Hosted by Github at https://nguyenmichael.dev/viet-type-assist/
 
 Type into the indicated box. Your text will appear in the display box. On Web, hover over the letters which have tone or diacritic marks (a, e, i, o, u, d) and select your choice of tone and diacritic combination. On mobile, press the letter and a selection box will appear. When finished, tap or click "Copy to clipboard" and paste your words/phrases where ever you'd like!
 
-<img src="./readme-images/readme-1.jpg" width="220">
-<img src="./readme-images/readme-2.jpg" width="220">
-<img src="./readme-images/readme-3.jpg" width="220">
-<img src="./readme-images/readme-4.jpg" width="220">
-<img src="./readme-images/readme-5.jpg" width="220">
-<img src="./readme-images/readme-6.jpg" width="220">
+<p>
+  <img src="./readme-images/readme-1.jpg" width="220">
+  <img src="./readme-images/readme-2.jpg" width="220">
+  <img src="./readme-images/readme-3.jpg" width="220">
+  <img src="./readme-images/readme-4.jpg" width="220">
+  <img src="./readme-images/readme-5.jpg" width="220">
+  <img src="./readme-images/readme-6.jpg" width="220">
+</p>
 
 ### Progressive Web App
 
