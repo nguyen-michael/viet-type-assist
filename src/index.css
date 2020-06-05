@@ -11,6 +11,9 @@ body {
   top: 100%;
 }
 
+.tooltip .tooltiptext {
+  transition: 0.15s;
+}
 
 .tooltip:hover .tooltiptext {
   visibility: visible;
