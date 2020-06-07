@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "362129137c5d09dc8cd36c9b9ca90e0c",
+    "revision": "7b965cf63b8a3bbd05d089422fd6cfec",
     "url": "/viet-type-assist/index.html"
   },
   {
